@@ -4,6 +4,5 @@
 		<jta-data-source>jdbc/SocialHelping</jta-data-source>
 		<class>datamodel.entites.Customer</class>
 		<class>datamodel.entites.EventMessage</class>
-		<class>datamodel.entites.IdGen</class>
 	</persistence-unit>
 </persistence>

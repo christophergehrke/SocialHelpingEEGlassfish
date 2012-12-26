@@ -20,7 +20,11 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="/Users/junior/beuth/mysql-connector-java-5.1.0-bin.jar"/>
-	<classpathentry kind="lib" path="primeaces/primefaces-3.4.2-sources.jar"/>
 	<classpathentry kind="con" path="org.eclipse.datatools.connectivity.jdt.DRIVERLIBRARY/MySQL JDBC Driver"/>
+	<classpathentry kind="lib" path="primeaces"/>
+	<classpathentry kind="lib" path="primeaces/primefaces-3.4.2-sources.jar"/>
+	<classpathentry kind="lib" path="primeaces/primefaces-3.4.2.jar"/>
+	<classpathentry kind="var" path="prime3.4"/>
+	<classpathentry kind="var" path="prime3.4.source"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/WEB-INF/pages/template.xhtml">
+	
+<ui:define name="content">
+
+   <!-- h:form>
+	<h:dataTable id="dt1" value="#{eventMessageBean.eventMessageList}" 
+	var="item" bgcolor="#F1F1F1" border="10"  cellspacing="2"
+	 width="60%"  rules="all" -->	
+	 
+	 <h:form id="form">  
+  
+    <p:dataTable var="eventMessage" value="#{eventMessageBean.eventMessageList}" paginator="true" rows="10"  
+                 paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"  
+                 rowsPerPageTemplate="5,10,15" selectionMode="single" selection="#{eventMessageBean.selectedEventMessage}" id="eventMessageTable" lazy="true">  
+  
+        <p:ajax event="rowSelect" listener="#{eventMessageBean.onRowSelect}" update=":form:display" oncomplete="eventMessageDialog.show()" />  
+  
+        <p:column headerText="messageId" sortBy="#{eventMessage.messageId}" filterBy="#{eventMessage.messageId}">  
+            <h:outputText value="#{eventMessage.messageId}" />  
+        </p:column>  
+  
+        <p:column headerText="createdDate" sortBy="#{eventMessage.createdDate}" filterBy="#{eventMessage.createdDate}">  
+            <h:outputText value="#{eventMessage.createdDate}" />  
+        </p:column>  
+  
+        <p:column headerText="imageur" sortBy="#{eventMessage.imageurl}" filterBy="#{eventMessage.imageurl}">  
+            <h:outputText value="#{eventMessage.imageurl}" />  
+        </p:column>  
+  
+        <p:column headerText="description" sortBy="#{eventMessage.description}" filterBy="#{eventMessage.description}">  
+            <h:outputText value="#{eventMessage.description}" />  
+        </p:column>  
+    </p:dataTable>  
+  
+    <p:dialog header="Car Detail" widgetVar="eventMessageDialog" resizable="false"  
+              showEffect="explode" hideEffect="explode">  
+  
+        <h:panelGrid id="display" columns="2" cellpadding="4">  
+  
+            <f:facet name="header">  
+                <!-- p:graphicImage value="/images/cars/#{eventMessageBean.selectedEventMessage.imageurl}.jpg"/-->  
+            </f:facet>  
+  
+            <h:outputText value="Model:" />  
+            <h:outputText value="#{eventMessageBean.selectedEventMessage.messageId}" style="font-weight:bold"/>  
+  
+            <h:outputText value="Year:" />  
+            <h:outputText value="#{eventMessageBean.selectedEventMessage.createdDate}" style="font-weight:bold"/>  
+  
+            <h:outputText value="Manufacturer:" />  
+            <h:outputText value="#{eventMessageBean.selectedEventMessage.imageurl}" style="font-weight:bold"/>  
+  
+            <h:outputText value="Color:" />  
+            <h:outputText value="#{eventMessageBean.selectedEventMessage.description}" style="font-weight:bold"/>  
+        </h:panelGrid>  
+    </p:dialog>  
+  
+</h:form>  
+	 		 
+<!-- 	
+	<f:facet name="header">
+	  <h:outputText value="Messaeg List Data Table" />
+	</f:facet> 
+	
+	<h:column>
+	  <f:facet name="header">
+	  <h:outputText value="CustomerId" />
+	  </f:facet> 
+	   <h:outputText value="#{item.description}"></h:outputText>
+	</h:column>
+	
+	<h:column>
+	  <f:facet name="header">
+	  <h:outputText value="Name"/>
+	  </f:facet> 
+	   <h:outputText value="#{item.imageurl}"></h:outputText>
+	</h:column>
+	
+	<h:column>
+	  <f:facet name="header">
+	  <h:outputText value="Age"/>
+	  </f:facet> 
+	   <h:outputText value="#{item.langitude}"></h:outputText>
+	</h:column>
+	
+	<h:column>
+	  <f:facet name="header">
+	  <h:outputText value="Email"/>
+	  </f:facet>
+	   <h:outputText value="#{item.longitude}"></h:outputText>
+	</h:column>
+	
+	<h:column>
+	  <f:facet name="header">
+	  <h:outputText value="Address"/>
+	  </f:facet>
+	   <h:outputText value="#{item.text}"></h:outputText>
+	</h:column>
+
+	<h:column>
+	  <f:facet name="header">
+	  <h:outputText value="Address"/>
+	  </f:facet>
+	   <h:outputText value="#{item.titel}"></h:outputText>
+	</h:column>
+				
+	</h:dataTable>
+ </h:form>
+	-->
+ 
+</ui:define>
+	
+</ui:composition>
+</html>

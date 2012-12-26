@@ -31,12 +31,9 @@ public class EventMessage implements Serializable {
 
 	private String longitude;
 
-	private String titel;
+	private int text;
 
-	//bi-directional many-to-one association to IdGen
-	@ManyToOne
-	@JoinColumn(name="CATEGORY", referencedColumnName="gen_value")
-	private IdGen idGen;
+	private String titel;
 
 	public EventMessage() {
 	}
@@ -89,20 +86,20 @@ public class EventMessage implements Serializable {
 		this.longitude = longitude;
 	}
 
+	public int getText() {
+		return this.text;
+	}
+
+	public void setText(int text) {
+		this.text = text;
+	}
+
 	public String getTitel() {
 		return this.titel;
 	}
 
 	public void setTitel(String titel) {
 		this.titel = titel;
-	}
-
-	public IdGen getIdGen() {
-		return this.idGen;
-	}
-
-	public void setIdGen(IdGen idGen) {
-		this.idGen = idGen;
 	}
 
 }

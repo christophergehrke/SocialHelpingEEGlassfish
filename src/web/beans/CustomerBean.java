@@ -28,4 +28,5 @@ public class CustomerBean {
 	public void setCustomerList(List<Customer> customerList) {
 		this.customerList = customerList;
 	}
+	
 }
