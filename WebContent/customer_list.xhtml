@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/WEB-INF/pages/template.xhtml">
+	
+<ui:define name="content">
+
+   <h:form>
+	<h:dataTable id="dt1" value="#{customerBean.customerList}" 
+	var="item" bgcolor="#F1F1F1" border="10"  cellspacing="2"
+	 width="60%"  rules="all" >			 
+	
+	<f:facet name="header">
+	  <h:outputText value="Customer List Data Table" />
+	</f:facet> 
+	
+	<h:column>
+	  <f:facet name="header">
+	  <h:outputText value="CustomerId" />
+	  </f:facet> 
+	   <h:outputText value="#{item.customerId}"></h:outputText>
+	</h:column>
+	
+	<h:column>
+	  <f:facet name="header">
+	  <h:outputText value="Name"/>
+	  </f:facet> 
+	   <h:outputText value="#{item.name}"></h:outputText>
+	</h:column>
+	
+	<h:column>
+	  <f:facet name="header">
+	  <h:outputText value="Age"/>
+	  </f:facet> 
+	   <h:outputText value="#{item.age}"></h:outputText>
+	</h:column>
+	
+	<h:column>
+	  <f:facet name="header">
+	  <h:outputText value="Email"/>
+	  </f:facet>
+	   <h:outputText value="#{item.email}"></h:outputText>
+	</h:column>
+	
+	<h:column>
+	  <f:facet name="header">
+	  <h:outputText value="Address"/>
+	  </f:facet>
+	   <h:outputText value="#{item.address}"></h:outputText>
+	</h:column>
+				
+	</h:dataTable>
+	
+ </h:form>
+</ui:define>
+	
+</ui:composition>
+</html>
